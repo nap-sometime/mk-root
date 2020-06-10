@@ -3,7 +3,7 @@ const webpackMerge = require('webpack-merge');
 const singleSpaDefaults = require('webpack-config-single-spa-ts');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-// const path = require('path');
+const path = require('path');
 
 module.exports = (webpackConfigEnv) => {
 	const defaultConfig = singleSpaDefaults({
@@ -13,6 +13,7 @@ module.exports = (webpackConfigEnv) => {
 	});
 
 	return webpackMerge.smart(defaultConfig, {
+		entry: path.join(__dirname, 'src/root_config'),
 		output: {
 			filename: 'root-config.js',
 		},
@@ -33,5 +34,6 @@ module.exports = (webpackConfigEnv) => {
 				'Access-Control-Allow-Origin': '*',
 			},
 		},
+		externals: ['vue', 'vue-router', /^@mk\/.+$/],
 	});
 };
