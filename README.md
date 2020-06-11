@@ -10,4 +10,4 @@
     -   [x] use self-certificate on local dev server
         -   **solution** use [mkcert](https://github.com/FiloSottile/mkcert)
         -   **webpack dev server** set `key` and `cert` on [https](https://webpack.js.org/configuration/dev-server/#devserverhttps)
-    -   [ ] create
+    -   [ ] create custom `single-spa` boilerplate both `root-config`, `application | parcel` and `share module`
