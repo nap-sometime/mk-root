@@ -6,21 +6,16 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title><%= htmlWebpackPlugin.options.title %></title>
   <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.5/runtime.min.js"></script>
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';">
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"> -->
   <meta name="importmap-type" content="systemjs-importmap" />
-  <script type="systemjs-importmap">
-    {
-      "imports": {
-        "single-spa": "https://cdn.jsdelivr.net/npm/single-spa/lib/system/single-spa.min.js"
-      }
-    }
-  </script>
 	<script type="systemjs-importmap">
 	{
 		"imports": {
+			"single-spa": "https://cdn.jsdelivr.net/npm/single-spa/lib/system/single-spa.min.js",
 			"@mk/root-config": "//localhost:9000/root-config.js",
+			"@mk/auth": "//localhost:8001/js/app.js",
 			"vue": "https://cdn.jsdelivr.net/npm/vue@2.6.11/dist/vue.js",
-			"vue-router": "https://unpkg.com/vue-router@3.3.2/dist/vue-router.js",
+			"vue-router": "https://unpkg.com/vue-router@3.3.2/dist/vue-router.js"
 		}
 	}
 	</script>
@@ -30,7 +25,9 @@
   <script src="https://cdn.jsdelivr.net/npm/systemjs/dist/extras/named-exports.min.js"></script>
 </head>
 <body>
-  <main></main>
+  <main>
+		<!-- <section id="mk-auth"></section> -->
+	</main>
   <script>
     System.import('@mk/root-config');
   </script>
