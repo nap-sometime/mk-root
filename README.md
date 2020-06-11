@@ -13,7 +13,8 @@
     -   [x] use self-certificate on local dev server
         -   **solution** use [mkcert](https://github.com/FiloSottile/mkcert)
         -   **webpack dev server** set `key` and `cert` on [https](https://webpack.js.org/configuration/dev-server/#devserverhttps)
-    -   [ ] infer vue type
+    -   [x] infer vue type
+        -   **solution** declare vue module in `*.shim.d.ts` and add to tsconfig.json
     -   [ ] create custom `single-spa` boilerplate both `root-config`, `application | parcel` and `share module`
     -   [ ] hot reload problem
     -   [x] support code splitting
