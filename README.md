@@ -18,3 +18,16 @@
     -   [x] support code splitting
         -   **solution** use [dynamic import](https://webpack.js.org/guides/code-splitting/#dynamic-imports)
     -   [ ] support `vue composition api` and `vue@3`
+
+---
+
+## How to self-certificate with mkcert
+
+-   [install mkcert](https://github.com/FiloSottile/mkcert)
+-   create `cert` directory to store self-certifiate files
+-   following below step
+
+```bash
+mkcert -install # install root CA
+mkcert -key-file key.pem -cert-file cert.pem localhost ::1 # gen certificate for `localhost`
+```
