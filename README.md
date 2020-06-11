@@ -15,4 +15,6 @@
         -   **webpack dev server** set `key` and `cert` on [https](https://webpack.js.org/configuration/dev-server/#devserverhttps)
     -   [ ] infer vue type
     -   [ ] create custom `single-spa` boilerplate both `root-config`, `application | parcel` and `share module`
+    -   [x] support code splitting
+        -   **solution** use [dynamic import](https://webpack.js.org/guides/code-splitting/#dynamic-imports)
     -   [ ] support `vue composition api` and `vue@3`
