@@ -5,6 +5,8 @@
     -   [x] async component `Foo: () => import('~/components/Foo')`
     -   [x] webpack resolve alias
         -   **solution** add webpack resolve alias block, resolve `src` path
+    -   [ ] root dependecies control
+        -   should not import latest cdn
 -   [x] `assets` and `resource` configuration
     -   [x] cannot resolve assets from _single-spa/application_
         -   **solution** check `set_public_path` should import on the top of main file
@@ -16,10 +18,14 @@
     -   [x] infer vue type
         -   **solution** declare vue module in `*.shim.d.ts` and add to tsconfig.json
     -   [ ] create custom `single-spa` boilerplate both `root-config`, `application | parcel` and `share module`
-    -   [ ] hot reload problem
+    -   [x] hot reload problem
+        -   **solution** depends on `publicPath` webpack config
+        -   restart webpack dev server (maybe)
     -   [x] support code splitting
         -   **solution** use [dynamic import](https://webpack.js.org/guides/code-splitting/#dynamic-imports)
     -   [ ] support `vue composition api` and `vue@3`
+-   [ ] security
+    -   [ ] should not import `package.json` directly, hide library infomation
 
 ---
 
