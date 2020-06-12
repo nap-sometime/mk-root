@@ -15,7 +15,7 @@ registerApplication({
 registerApplication({
 	name: '@mk/auth',
 	app: () => System.import('@mk/auth'),
-	activeWhen: ['/'],
+	activeWhen: ['/', '/auth'],
 });
 
 // [add('@single-spa/welcome')].forEach(registerApplication);
