@@ -1,6 +1,6 @@
-## ISSUE TRACKER
+## Issue Tracker
 
--   [ ] layout controller, layout controller should belong to ? `root-config` or create new single-spa application
+-   [ ] layout controller, layout controller should belong to ? `root-config` or a new `layout` application
 -   [x] vue over single-spa
     -   [x] async component `Foo: () => import('~/components/Foo')`
     -   [x] webpack resolve alias
@@ -20,12 +20,14 @@
     -   [ ] create custom `single-spa` boilerplate both `root-config`, `application | parcel` and `share module`
     -   [x] hot reload problem
         -   **solution** depends on `publicPath` webpack config
-        -   restart webpack dev server (maybe)
+        -   if https required, _recheck self-certificate ip address_
     -   [x] support code splitting
         -   **solution** use [dynamic import](https://webpack.js.org/guides/code-splitting/#dynamic-imports)
     -   [ ] support `vue composition api` and `vue@3`
+    -   [ ] integrate universal UI
 -   [ ] security
     -   [ ] should not import `package.json` directly, hide library infomation
+    -   [ ] better CSP config
 
 ---
 
