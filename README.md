@@ -24,7 +24,7 @@
     -   [x] support code splitting
         -   **solution** use [dynamic import](https://webpack.js.org/guides/code-splitting/#dynamic-imports)
     -   [ ] support `vue composition api` and `vue@3`
-    -   [ ] integrate universal UI
+    -   [ ] implement universal UI
 -   [ ] security
     -   [ ] should not import `package.json` directly, hide library infomation
     -   [ ] better CSP config
