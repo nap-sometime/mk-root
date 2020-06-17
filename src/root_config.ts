@@ -6,6 +6,12 @@ import { registerApplication, start } from 'single-spa';
 // 	...options,
 // });
 
+// registerApplication({
+// 	name: '@mk/auth',
+// 	app: () => System.import('@mk/auth'),
+// 	activeWhen: () => true,
+// });
+
 registerApplication({
 	name: '@single-spa/welcome',
 	app: () => System.import('https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js'),
@@ -15,10 +21,8 @@ registerApplication({
 registerApplication({
 	name: '@mk/auth',
 	app: () => System.import('@mk/auth'),
-	activeWhen: ['/', '/auth'],
+	activeWhen: () => true,
 });
-
-// [add('@single-spa/welcome')].forEach(registerApplication);
 
 start({
 	urlRerouteOnly: true,
