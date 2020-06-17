@@ -26,7 +26,8 @@
     -   [ ] support `vue composition api` and `vue@3`
     -   [ ] implement universal UI
 -   [ ] security
-    -   [ ] should not import `package.json` directly, hide library infomation
+    -   [x] should not import `package.json` directly, hide library infomation
+        -   **solution-vue** pass environment variable through [_process.env.VUE_APP\_\*_](https://cli.vuejs.org/guide/mode-and-env.html#example-staging-mode)
     -   [ ] better CSP config
 
 ---
