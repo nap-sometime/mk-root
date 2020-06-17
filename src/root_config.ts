@@ -7,14 +7,14 @@ import { registerApplication, start } from 'single-spa';
 // });
 
 // registerApplication({
-// 	name: '@mk/auth',
-// 	app: () => System.import('@mk/auth'),
-// 	activeWhen: () => true,
+// 	name: '@single-spa/welcome',
+// 	app: () => System.import('https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js'),
+// 	activeWhen: ['/home'],
 // });
 
 registerApplication({
-	name: '@single-spa/welcome',
-	app: () => System.import('https://unpkg.com/single-spa-welcome/dist/single-spa-welcome.js'),
+	name: '@mk/home',
+	app: () => System.import('@mk/home'),
 	activeWhen: ['/home'],
 });
 
