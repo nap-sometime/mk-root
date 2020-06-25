@@ -4,7 +4,7 @@
 	"private": true,
 	"license": "bsd-3-clause",
 	"scripts": {
-		"start": "webpack-dev-server --mode=development --port 9000 --env.isLocal=true",
+		"start": "webpack-dev-server --mode=development --env.isLocal=true",
 		"lint:ts-only": "eslint '*/**/*.{ts}' --quiet",
 		"lint": "eslint src --ext js,ts,tsx",
 		"test": "cross-env BABEL_ENV=test jest --passWithNoTests",
