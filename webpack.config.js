@@ -6,6 +6,28 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const path = require('path');
 const { readFileSync } = require('fs');
 
+// helper
+const isProd = ['production', 'runtest'].some((v) => process.env.NODE_ENV === v);
+const loadFile = (path = '') => readFileSync(path);
+
+// config webpack dev server
+const devServer = isProd
+	? undefined
+	: {
+			headers: {
+				'Access-Control-Allow-Origin': '*',
+			},
+			historyApiFallback: true,
+			disableHostCheck: true,
+			sockPort: 8080,
+			sockHost: 'localhost',
+			port: 8080,
+			https: {
+				cert: loadFile(path.join(__dirname, '../cert/cert.pem')),
+				key: loadFile(path.join(__dirname, '../cert/key.pem')),
+			},
+	  };
+
 module.exports = (webpackConfigEnv) => {
 	const defaultConfig = singleSpaDefaults({
 		orgName: 'mk',
@@ -32,17 +54,7 @@ module.exports = (webpackConfigEnv) => {
 			}),
 			new CleanWebpackPlugin(),
 		],
-		devServer: {
-			historyApiFallback: true,
-			disableHostCheck: true,
-			headers: {
-				'Access-Control-Allow-Origin': '*',
-			},
-			https: {
-				cert: readFileSync(path.join(__dirname, '../cert/cert.pem')),
-				key: readFileSync(path.join(__dirname, '../cert/key.pem')),
-			},
-		},
 		externals: ['vue', 'vue-router', /^@mk\/.+$/],
+		devServer,
 	});
 };
